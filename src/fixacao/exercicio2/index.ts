@@ -7,11 +7,12 @@ Tendo isso em mente, faça o que se pede:
 1. Crie um type para representar um post;
 2. Utilize o tipo criado acima para fazer a tipagem do array posts;
 3. Analise a função buscarPostsPorAutor, escrita em JS:
-  a. Quais são as entradas e saídas dessa função? 
-  b. Faça a tipagem da função.
+a. Quais são as entradas e saídas dessa função? 
+b. Faça a tipagem da função.
 */
+import { Posts } from "../../types/types"
 
-const posts = [
+const posts: Array<Posts> = [
   {
     autor: 'Alvo Dumbledore',
     texto: 'Não vale a pena viver sonhando e se esquecer de viver'
@@ -34,10 +35,11 @@ const posts = [
   }
 ]
 
-function buscarPostsPorAutor(posts, autorInformado) {
+function buscarPostsPorAutor(posts:Array<Posts>, autorInformado:string) {
   return posts.filter(
-    (post) => {
-      return post.autor === autorInformado
+    (posts) => {
+      return posts.autor === autorInformado
     }
   )
 }
+console.log(buscarPostsPorAutor(posts,'Lord Voldemort'))
